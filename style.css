@@ -97,6 +97,16 @@ img {
 .has-margin-right {
   margin-right: 5rem;
 }
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
 /* End reusable */
 
 /* Start header */
@@ -216,19 +226,19 @@ li {
 .landing-text h1 {
   font-size: 9.75rem;
   padding: 1rem;
-  user-select: none;
 }
 
 .landing-text h6 {
   font-size: 4rem;
   font-weight: 300;
   color: #89aaa9;
-  user-select: none;
 }
 
 /* Cursor */
-.txt-type > .txt {
-  border-right: 0.2rem solid #89aaa9;
+.txt-type > .txt:after {
+  content: "";
+  border-right: 0.05em solid #89aaa9;
+  animation: blink 1s steps(1) infinite;
 }
 /* End header */
 
@@ -407,6 +417,11 @@ input[type="submit"]:hover {
 /* End footer */
 
 /* Start animation */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(115, 138, 144, 0.99);
