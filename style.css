@@ -114,13 +114,12 @@ header {
 
 .top-nav {
   width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: -100vh;
+  top: 0;
+  height: 6vh;
   z-index: 50;
+  position: fixed;
   background-color: #1f2833;
-  border-bottom-right-radius: 100%;
-  border-bottom-left-radius: 100%;
+  opacity: 0.75;
   transition: all 650ms cubic-bezier(1, 0, 0, 1);
 }
 
@@ -139,7 +138,7 @@ li {
 
 .nav-link {
   color: #c5c6c7;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   padding: 1rem;
   text-align: center;
 }
@@ -163,7 +162,7 @@ li {
   right: 5rem;
   width: 3rem;
   height: 2rem;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -351,7 +350,9 @@ li {
 /* End portfolio */
 
 /* Start contact */
-
+.contact {
+  height: 100%;
+}
 form {
   width: 70%;
   margin: 0 auto;
@@ -442,6 +443,60 @@ input[type="submit"]:hover {
 
 /* media queries */
 
+@media screen and (max-width: 1200px) {
+  .nav-link {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (max-width: 1127px) {
+  .nav-link {
+    font-size: 2.1rem;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .landing-text h1 {
+    font-size: 7.3125rem;
+  }
+  .landing-text h6 {
+    font-size: 3rem;
+  }
+  .menu-toggler {
+    display: flex;
+  }
+  .top-nav {
+    height: 100vh;
+    top: -100vh;
+    opacity: 0.98;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+  }
+  .nav-list {
+    flex-direction: column;
+  }
+
+  li {
+    margin: 2rem 0;
+  }
+
+  .about-heading h1 {
+    font-size: 8rem;
+  }
+
+  .section-heading h1 {
+    font-size: 3rem;
+  }
+
+  .about-details .nav-list {
+    flex-direction: initial;
+  }
+
+  .about-details li {
+    margin: 0 2rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .landing-text h1 {
     font-size: 7.3125rem;
@@ -449,7 +504,15 @@ input[type="submit"]:hover {
   .landing-text h6 {
     font-size: 3rem;
   }
-
+  .menu-toggler {
+    display: flex;
+  }
+  .top-nav {
+    height: 100vh;
+    top: -100vh;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+  }
   .nav-list {
     flex-direction: column;
   }
@@ -517,5 +580,11 @@ input[type="submit"]:hover {
 
   .up {
     right: 2rem;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 310px) {
+  .nav-link {
+    font-size: 1.8rem;
   }
 }
