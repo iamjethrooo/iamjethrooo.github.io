@@ -1,3 +1,4 @@
+// Typewriter effect on landing page
 class TypeWriter {
   constructor(txtElement, words, wait = 3000) {
     this.txtElement = txtElement;
@@ -56,13 +57,16 @@ document.addEventListener("DOMContentLoaded", init);
 
 // Init App
 function init() {
+  console.log("HUHU");
   const txtElement = document.querySelector(".txt-type");
   const words = JSON.parse(txtElement.getAttribute("data-words"));
   const wait = txtElement.getAttribute("data-wait");
   // Init TypeWriter
   new TypeWriter(txtElement, words, wait);
+  new Slider();
 }
 
+// Hamburger menu
 $(document).ready(function() {
   $(".menu-toggler").on("click", function() {
     $(this).toggleClass("open");
@@ -98,4 +102,9 @@ $(document).ready(function() {
     duration: 1800,
     once: true /* Animation only runs once */
   });
+});
+
+// Link Highlighting on Scroll
+$(function() {
+  // Nav Position
 });
