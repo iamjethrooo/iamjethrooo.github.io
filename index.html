@@ -14,8 +14,8 @@
   </head>
   <body>
     <header>
-      <div class="menu-toggler">
-        <div class="bar"></div>
+      <div class="menu-toggler no-select">
+        <div class="bar no-select"></div>
       </div>
       <nav class="top-nav">
         <ul class="nav-list">
@@ -164,72 +164,29 @@
     </section>
     <!--Visual Design Portfolion START-->
     <section class="portfolio" id="visual-design-portfolio">
-      <div class="container" id="visual-design-portfolio">
+      <div class="container">
         <div class="section-heading">
           <h1>Visual Design Portfolio</h1>
           <h6>View some of my work</h6>
         </div>
-        <div class="portfolio-item">
-          <div
-            class="portfolio-img has-margin-right"
-            data-aos="fade-in"
-            data-aos-delay="300"
-          >
-            <img src="images/placeholder.png" alt="" />
+        <div class="slideshow-container">
+          <div class="slides">
+            <div class="slide">
+              <img src="images/placeholder.png" alt="" />
+              <div class="slide-desc no-select">Description</div>
+            </div>
+            <div class="slide">
+              <img src="images/placeholder.png" alt="" />
+              <div class="slide-desc no-select">Description</div>
+            </div>
+            <div class="slide">
+              <img src="images/placeholder.png" alt="" />
+              <div class="slide-desc no-select">Description</div>
+            </div>
           </div>
-          <div
-            class="portfolio-description"
-            data-aos="fade-left"
-            data-aos-delay="600"
-          >
-            <h6>Placeholder</h6>
-            <h1>Placeholder</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-            <a href="#" class="cta">View Details</a>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div
-            class="portfolio-description has-margin-right"
-            data-aos="fade-right"
-            data-aos-delay="900"
-          >
-            <h6>Placeholder</h6>
-            <h1>Placeholder</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-            <a href="#" class="cta">View Details</a>
-          </div>
-          <div class="portfolio-img" data-aos="fade-left" data-aos-delay="1200">
-            <img src="images/placeholder.png" alt="" />
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div
-            class="portfolio-img has-margin-right"
-            data-aos="fade-right"
-            data-aos-delay="1500"
-          >
-            <img src="images/placeholder.png" alt="" />
-          </div>
-          <div
-            class="portfolio-description"
-            data-aos="fade-left"
-            data-aos-delay="1800"
-          >
-            <h6>Placeholder</h6>
-            <h1>Placeholder</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-            <a href="#" class="cta">View Details</a>
-          </div>
+          <a class="arrow-left" href="javascript:void(0);"></a>
+          <a class="arrow-right" href="javascript:void(0);"></a>
+          <div class="dots-wrapper"></div>
         </div>
       </div>
     </section>
@@ -284,6 +241,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="slider.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
