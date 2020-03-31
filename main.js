@@ -67,6 +67,8 @@ function init() {
 
 // Hamburger menu
 $(document).ready(function() {
+  $(document).on("scroll", onScroll);
+
   $(".menu-toggler").on("click", function() {
     $(this).toggleClass("open");
     $(".bar").toggleClass("open");
@@ -79,9 +81,15 @@ $(document).ready(function() {
   });
 
   $('nav a[href*="#"]').on("click", function() {
+    var anchor = $(this).attr("href");
+    $("a").each(function() {
+      $(this).removeClass("active");
+    });
+    $(this).addClass("active");
+
     $("html, body").animate(
       {
-        scrollTop: $($(this).attr("href")).offset().top
+        scrollTop: $(anchor).offset().top
       },
       2000
     );
@@ -104,6 +112,19 @@ $(document).ready(function() {
 });
 
 // Link Highlighting on Scroll
-$(function() {
-  // Nav Position
-});
+function onScroll(event) {
+  var scrollPos = $(document).scrollTop();
+  $("nav a").each(function() {
+    var currLink = $(this);
+    var refElement = $(currLink.attr("href"));
+    if (
+      refElement.position().top <= scrollPos &&
+      refElement.position().top + refElement.height() > scrollPos
+    ) {
+      $("nav a").removeClass("active");
+      currLink.addClass("active");
+    } else {
+      currLink.removeClass("active");
+    }
+  });
+}
