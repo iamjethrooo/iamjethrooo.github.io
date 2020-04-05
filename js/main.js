@@ -66,39 +66,39 @@ function init() {
 }
 
 // Hamburger menu
-$(document).ready(function() {
+$(document).ready(function () {
   $(document).on("scroll", onScroll);
 
-  $(".menu-toggler").on("click", function() {
+  $(".menu-toggler").on("click", function () {
     $(this).toggleClass("open");
     $(".bar").toggleClass("open");
     $(".top-nav").toggleClass("open");
   });
 
-  $(".top-nav .nav-link").on("click", function() {
+  $(".top-nav .nav-link").on("click", function () {
     $("menu-toggler").removeClass("open");
     $(".top-nav").removeClass("open");
   });
 
-  $('nav a[href*="#"]').on("click", function() {
+  $('nav a[href*="#"]').on("click", function () {
     var anchor = $(this).attr("href");
-    $("a").each(function() {
+    $("a").each(function () {
       $(this).removeClass("active");
     });
     $(this).addClass("active");
 
     $("html, body").animate(
       {
-        scrollTop: $(anchor).offset().top
+        scrollTop: $(anchor).offset().top,
       },
       2000
     );
   });
 
-  $("#up").on("click", function() {
+  $("#up").on("click", function () {
     $("html, body").animate(
       {
-        scrollTop: 0
+        scrollTop: 0,
       },
       2000
     );
@@ -107,16 +107,33 @@ $(document).ready(function() {
   AOS.init({
     easing: "ease",
     duration: 1800,
-    once: true /* Animation only runs once */
+    once: true /* Animation only runs once */,
   });
 });
 
+let navbar = document.getElementById("top-nav");
+let sticky = navbar.offsetTop;
+
 // Link Highlighting on Scroll
 function onScroll(event) {
-  var scrollPos = $(document).scrollTop();
-  $("nav a").each(function() {
-    var currLink = $(this);
-    var refElement = $(currLink.attr("href"));
+  // Sticky navbar
+  if (
+    getComputedStyle(document.getElementById("menu-toggler"), null).display ==
+    "none"
+  ) {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  } else {
+    navbar.classList.remove("sticky");
+  }
+
+  let scrollPos = $(document).scrollTop();
+  $("nav a").each(function () {
+    let currLink = $(this);
+    let refElement = $(currLink.attr("href"));
     if (
       refElement.position().top <= scrollPos &&
       refElement.position().top + refElement.height() > scrollPos
