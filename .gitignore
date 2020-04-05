@@ -1,2 +1,4 @@
 *.scss
 *.map
+*.code-workspace
+/.sass-cache
