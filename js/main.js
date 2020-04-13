@@ -91,7 +91,7 @@ $(document).ready(function () {
       {
         scrollTop: $(anchor).offset().top,
       },
-      2000
+      800
     );
   });
 
@@ -112,7 +112,7 @@ $(document).ready(function () {
 });
 
 let navbar = document.getElementById("top-nav");
-let sticky = navbar.offsetTop;
+let sticky = navbar.offsetTop + 50;
 
 // Link Highlighting on Scroll
 function onScroll(event) {
