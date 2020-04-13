@@ -20,7 +20,7 @@ body {
   overflow-x: hidden; }
 
 section {
-  margin: 10rem 0;
+  padding: 50px 0;
   min-height: 100vh; }
 
 a {
@@ -105,10 +105,12 @@ img {
 .slide {
   display: none;
   width: 70%;
-  margin: auto; }
+  margin: auto;
+  animation: fadeIn 1s; }
 
 .slide img {
-  width: 100%; }
+  width: 100%;
+  transition: 1s all ease-in; }
 
 a[class|="arrow"] {
   position: absolute;
@@ -459,6 +461,11 @@ input[type="submit"]:hover {
 @keyframes popDown {
   0% {
     transform: translateY(-100px); } }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 /* End animation */
 /* media queries */
 @media screen and (max-width: 1200px) {
