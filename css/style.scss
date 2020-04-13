@@ -22,7 +22,7 @@ body {
 }
 
 section {
-  margin: 10rem 0;
+  padding: 50px 0;
   min-height: 100vh;
 }
 
@@ -116,10 +116,12 @@ img {
   display: none;
   width: 70%;
   margin: auto;
+  animation: fadeIn 1s;
 }
 
 .slide img {
   width: 100%;
+  transition: 1s all ease-in;
 }
 
 a[class|="arrow"] {
@@ -350,8 +352,6 @@ li {
 /* End header */
 
 /* Start about */
-.about {
-}
 
 .about .container {
   padding-top: 50px;
@@ -527,6 +527,7 @@ input[type="submit"]:hover {
     border-color: transparent;
   }
 }
+
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(115, 138, 144, 0.99);
@@ -542,6 +543,15 @@ input[type="submit"]:hover {
 @keyframes popDown {
   0% {
     transform: translateY(-100px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
