@@ -211,11 +211,7 @@ li {
 .nav-link:hover,
 .nav-link:focus,
 .nav-link.active {
-  background: #66fcf1;
-  color: #66fcf1;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
+  color: #66fcf1; }
 
 .top-nav.open {
   top: 0;
