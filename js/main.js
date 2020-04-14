@@ -112,7 +112,7 @@ $(document).ready(function () {
 });
 
 let navbar = document.getElementById("top-nav");
-let sticky = navbar.offsetTop + 50;
+let sticky = navbar.offsetTop + 100;
 
 // Link Highlighting on Scroll
 function onScroll(event) {
@@ -145,3 +145,29 @@ function onScroll(event) {
     }
   });
 }
+
+const FILTER_BUTTONS = document.querySelectorAll(".filter");
+
+function filter(className) {
+  let items = document.querySelectorAll(".portfolio-item");
+
+  if (className == "portfolio-item") {
+    items.forEach((item) => {
+      item.style.display = "inline-flex";
+    });
+    return;
+  }
+  items.forEach((item) => {
+    if (item.classList[0] != className) {
+      item.style.display = "none";
+    } else {
+      item.style.display = "inline-flex";
+    }
+  });
+}
+FILTER_BUTTONS.forEach((filterButton) => {
+  filterButton.addEventListener("click", (e) => {
+    let className = e.target.getAttribute("data-filter");
+    filter(className);
+  });
+});

@@ -58,7 +58,7 @@ img {
 .section-heading h1 {
   font-size: 3.5rem;
   color: rgba(197, 198, 199, 0.5);
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-weight: 300;
   position: relative;
   margin-bottom: 1rem;
@@ -403,50 +403,87 @@ li {
 /* End about */
 
 /* Start portfolio */
-.portfolio-item {
+.filter-wrapper {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 5rem;
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+  }
 }
 
-.portfolio-item:last-child {
-  margin-bottom: 0;
+.filter {
+  font-size: 13pt;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  &.active {
+    text-decoration: underline;
+  }
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.portfolio-item {
+  display: inline-flex;
+  position: relative;
+  justify-content: space-around;
+
+  &:hover .portfolio-img {
+    opacity: 0;
+  }
+
+  &:hover .portfolio-text {
+    cursor: default;
+    opacity: 1;
+    top: 24%;
+  }
+
+  &:hover button {
+    bottom: 24%;
+    opacity: 1;
+  }
+
+  button {
+    font-size: 13pt;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .portfolio-img {
-  flex: 1;
+  max-width: 100%;
+  transition: all 0.5s;
 }
 
-.portfolio-description {
-  flex: 1;
+.portfolio-text {
+  top: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.portfolio-title {
+  font-size: 16pt;
 }
 
-.portfolio-description h1 {
-  font-size: 3rem;
-  font-weight: 300;
-  margin: 1rem 0;
+.highlight {
+  font-size: 12pt;
 }
 
-.portfolio-description h6 {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 300;
-  opacity: 0.3;
-}
-
-.portfolio-description .cta {
-  display: inline-block;
-  margin-top: 2.5rem;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  color: #3883ff;
-  transition: color 650ms;
-}
-
-.portfolio-description .cta:hover {
-  color: #2f67cd;
-}
 /* End portfolio */
 
 /* Start contact */
