@@ -180,11 +180,11 @@ a[class|="arrow"] {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #1f2833;
   opacity: 0.75;
   animation: popDown 0.5s; }
 
 .top-nav {
+  background-color: #1f2833;
   position: absolute;
   z-index: 4000;
   height: 6vh;
@@ -232,7 +232,7 @@ li {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 1500; }
+  z-index: 5000; }
 
 .bar {
   position: relative;
