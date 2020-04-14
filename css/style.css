@@ -206,7 +206,8 @@ li {
   color: #c5c6c7;
   font-size: 2.1rem;
   padding: 1rem;
-  text-align: center; }
+  text-align: center;
+  transition: 0.2s all ease-in; }
 
 .nav-link:hover,
 .nav-link:focus,
@@ -215,6 +216,7 @@ li {
 
 .top-nav.open {
   top: 0;
+  position: fixed;
   border-radius: initial; }
 
 .menu-toggler {
@@ -348,18 +350,26 @@ li {
   display: flex;
   justify-content: center; }
   .filter-wrapper ul {
+    width: 70%;
     list-style: none;
     display: flex;
-    flex-direction: row; }
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 15px; }
 
 .filter {
   font-size: 13pt;
   border: none;
   outline: none;
+  padding: 0 7px;
   background: transparent;
   color: inherit;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: 0.4s all ease-in; }
   .filter.active {
+    background: #66fcf1;
+    color: #0b0c10; }
+  .filter.active, .filter:hover {
     text-decoration: underline; }
 
 #gallery {
@@ -369,7 +379,9 @@ li {
 .portfolio-item {
   display: inline-flex;
   position: relative;
-  justify-content: space-around; }
+  justify-content: space-around;
+  transition: opacity 0.5s linear;
+  animation: fadeIn 1s; }
   .portfolio-item:hover .portfolio-img {
     opacity: 0; }
   .portfolio-item:hover .portfolio-text {
@@ -489,6 +501,11 @@ input[type="submit"]:hover {
     opacity: 0; }
   to {
     opacity: 1; } }
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
 /* End animation */
 /* media queries */
 @media screen and (max-width: 1200px) {
