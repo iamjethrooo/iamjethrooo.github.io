@@ -166,7 +166,12 @@ function filter(className) {
   });
 }
 FILTER_BUTTONS.forEach((filterButton) => {
+
   filterButton.addEventListener("click", (e) => {
+    FILTER_BUTTONS.forEach((filterButton) => {
+      filterButton.classList.remove("active")
+    })
+    filterButton.classList.toggle("active");
     let className = e.target.getAttribute("data-filter");
     filter(className);
   });
