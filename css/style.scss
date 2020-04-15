@@ -111,7 +111,7 @@ img {
   height: 100vh;
 
   &::before {
-    background-image: url(/images/landing.JPG);
+    background-image: url(../images/landing.JPG);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -480,18 +480,21 @@ textarea {
 }
 
 button[type="submit"] {
+  height: 40px;
+  margin-left: 50%;
+  margin-top: 25px;
   width: 50%;
   background: transparent;
   border: 1px solid #c5c6c7;
   color: #c5c6c7;
-  padding: 1rem 2rem;
   cursor: pointer;
   transition: all 650ms;
 }
 
 button[type="submit"]:hover {
-  color: #0b0c10;
   background-color: #66fcf1;
+  border: none;
+  color: #0b0c10;
 }
 
 /* End contact */
