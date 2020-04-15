@@ -379,20 +379,35 @@ form {
   margin: 0 auto; }
 
 form label {
-  font-size: 1.5rem; }
+  font-size: 1.7rem;
+  line-height: 50px;
+  position: absolute;
+  transition: 0.5s;
+  opacity: 0.5; }
 
 input,
 textarea,
 button[type="submit"] {
+  position: relative;
   width: 100%;
-  padding: 1rem;
-  margin-bottom: 5px;
+  height: 50px;
   border: none;
-  outline-color: #45a29e; }
+  outline: none;
+  color: white; }
+
+.input-box.focus label {
+  transform: translateY(-30px);
+  font-size: 1.5rem;
+  opacity: 1;
+  color: #66fcf1; }
+
+textarea {
+  height: 100px; }
 
 input,
 textarea {
-  background: transparent; }
+  background: transparent;
+  border-bottom: 2px solid #c5c6c7; }
 
 button[type="submit"] {
   width: initial;
