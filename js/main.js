@@ -167,6 +167,7 @@ function filter(className) {
     }
   });
 }
+
 FILTER_BUTTONS.forEach((filterButton) => {
   filterButton.addEventListener("click", (e) => {
     FILTER_BUTTONS.forEach((filterButton) => {
@@ -175,5 +176,20 @@ FILTER_BUTTONS.forEach((filterButton) => {
     filterButton.classList.toggle("active");
     let className = e.target.getAttribute("data-filter");
     filter(className);
+  });
+});
+
+const INPUTS = document.querySelectorAll(".input");
+
+INPUTS.forEach((input) => {
+  console.log(input.parentElement);
+  input.addEventListener("focus", () => {
+    input.parentElement.classList.add("focus");
+  });
+  input.addEventListener("blur", () => {
+    console.log(input.value);
+    if (input.value === "") {
+      input.parentElement.classList.remove("focus");
+    }
   });
 });
