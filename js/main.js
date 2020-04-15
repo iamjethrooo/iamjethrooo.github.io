@@ -62,7 +62,6 @@ function init() {
   const wait = txtElement.getAttribute("data-wait");
   // Init TypeWriter
   new TypeWriter(txtElement, words, wait);
-  new Slider();
 }
 
 // Hamburger menu
@@ -131,12 +130,13 @@ function onScroll(event) {
   }
 
   let scrollPos = $(document).scrollTop();
+
   $("nav a").each(function () {
     let currLink = $(this);
     let refElement = $(currLink.attr("href"));
     if (
-      refElement.position().top <= scrollPos &&
-      refElement.position().top + refElement.height() > scrollPos
+      refElement.position().top - 100 <= scrollPos &&
+      refElement.position().top + refElement.height() >= scrollPos
     ) {
       $("nav a").removeClass("active");
       currLink.addClass("active");
@@ -151,12 +151,14 @@ const FILTER_BUTTONS = document.querySelectorAll(".filter");
 function filter(className) {
   let items = document.querySelectorAll(".portfolio-item");
 
+  // Every item has this class, so every item will be visible if this method is run
   if (className == "portfolio-item") {
     items.forEach((item) => {
       item.style.display = "inline-flex";
     });
     return;
   }
+
   items.forEach((item) => {
     if (item.classList[0] != className) {
       item.style.display = "none";
@@ -166,11 +168,10 @@ function filter(className) {
   });
 }
 FILTER_BUTTONS.forEach((filterButton) => {
-
   filterButton.addEventListener("click", (e) => {
     FILTER_BUTTONS.forEach((filterButton) => {
-      filterButton.classList.remove("active")
-    })
+      filterButton.classList.remove("active");
+    });
     filterButton.classList.toggle("active");
     let className = e.target.getAttribute("data-filter");
     filter(className);
