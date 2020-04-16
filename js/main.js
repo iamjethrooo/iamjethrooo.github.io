@@ -62,6 +62,7 @@ function init() {
   const wait = txtElement.getAttribute("data-wait");
   // Init TypeWriter
   new TypeWriter(txtElement, words, wait);
+  initModals();
 }
 
 // Hamburger menu
@@ -182,7 +183,6 @@ FILTER_BUTTONS.forEach((filterButton) => {
 const INPUTS = document.querySelectorAll(".input");
 
 INPUTS.forEach((input) => {
-  console.log(input.parentElement);
   input.addEventListener("focus", () => {
     input.parentElement.classList.add("focus");
   });
@@ -193,3 +193,145 @@ INPUTS.forEach((input) => {
     }
   });
 });
+
+/* Template for modal items
+itemName: {
+  title: "",
+  tag: "",
+  detail: "",
+  repo: "",
+  demo: "",
+  package: ""
+}
+*/
+function initModals() {
+  let modalItem = {
+    calculator: {
+      title: "Calculator",
+      tag: "Javascript & Java",
+      detail:
+        "Calculators that I made. One is a web version using JavaScript, and one is a desktop version using Java.",
+      repo: {
+        language: "JavaScript",
+        link: "https://github.com/iamjethrooo/calculator",
+      },
+      repo2: {
+        language: "Java",
+        link: "https://github.com/iamjethrooo/java-gui-calculator",
+      },
+      demo: "https://iamjethrooo.github.io/calculator",
+      image: "calculator/1.png",
+    },
+    etchasketch: {
+      title: "Etch a Sketch",
+      tag: "JavaScript",
+      detail: "",
+      repo: "https://github.com/iamjethrooo/etch-a-sketch",
+      demo: "https://iamjethrooo.github.io/etch-a-sketch/",
+      image: "etch-a-sketch/1.png",
+    },
+    rockpaperscissors: {
+      title: "Rock Paper Scissors",
+      tag: "JavaScript",
+      detail: "",
+      repo: "https://github.com/iamjethrooo/rock-paper-scissors",
+      demo: "https://iamjethrooo.github.io/rock-paper-scissors/",
+      image: "rock-paper-scissors/1.png",
+    },
+    visualdesign: {
+      title: "WALA PA PO HAHAHA",
+      detail: "IYAK",
+    },
+  };
+
+  const GALLERY_BUTTONS = document.querySelectorAll("#gallery .button");
+  GALLERY_BUTTONS.forEach((galleryButton) => {
+    galleryButton.addEventListener("click", () => {
+      fillModal(galleryButton.id);
+      document.querySelector(".modal-wrap").style.display = "flex";
+    });
+  });
+  const DEMO_ICON_CLASS = "fa-external-link-alt";
+  const GITHUB_ICON_CLASS = "fa-github";
+
+  let demoIcon = document.createElement("i");
+  demoIcon.classList.add("fas");
+  demoIcon.classList.add(DEMO_ICON_CLASS);
+  let githubIcon = document.createElement("i");
+  githubIcon.classList.add("fab");
+  githubIcon.classList.add(GITHUB_ICON_CLASS);
+
+  const MODAL_BUTTON = document.querySelector("#modal-button");
+  function fillModal(id) {
+    document.querySelector(".info-box .title").textContent =
+      modalItem[`${id}`].title;
+    if (modalItem[`${id}`].tag) {
+      document.querySelector(".info-box .tag").textContent =
+        modalItem[`${id}`].tag;
+    }
+    document.querySelector(".info-box .detail").textContent =
+      modalItem[`${id}`].detail;
+
+    if (modalItem[`${id}`].image) {
+      document.querySelector(".carousel-image").src =
+        "images/projects/" + modalItem[`${id}`].image;
+    }
+
+    if (modalItem[`${id}`].demo) {
+      let anchorButton = document.createElement("a");
+      anchorButton.classList.add("button");
+      anchorButton.href = modalItem[`${id}`].demo;
+      anchorButton.appendChild(demoIcon);
+      anchorButton.appendChild(document.createTextNode("demo"));
+      MODAL_BUTTON.appendChild(anchorButton);
+    }
+
+    if (modalItem[`${id}`].repo) {
+      let anchorButton = document.createElement("a");
+      let textNode;
+      anchorButton.classList.add("button");
+      if (modalItem[`${id}`].repo.language) {
+        textNode = document.createTextNode(
+          `repo (${modalItem[`${id}`].repo.language})`
+        );
+        anchorButton.href = modalItem[`${id}`].repo.link;
+      } else {
+        textNode = document.createTextNode("repo");
+        anchorButton.href = modalItem[`${id}`].repo;
+      }
+      anchorButton.appendChild(githubIcon);
+      anchorButton.appendChild(textNode);
+      MODAL_BUTTON.appendChild(anchorButton);
+    }
+
+    if (modalItem[`${id}`].repo2) {
+      let anchorButton = document.createElement("a");
+      let textNode;
+      anchorButton.classList.add("button");
+      if (modalItem[`${id}`].repo2.language) {
+        textNode = document.createTextNode(
+          `repo (${modalItem[`${id}`].repo2.language})`
+        );
+        anchorButton.href = modalItem[`${id}`].repo2.link;
+      } else {
+        anchorButton.href = modalItem[`${id}`].repo2;
+      }
+      anchorButton.appendChild(githubIcon);
+      anchorButton.appendChild(textNode);
+      MODAL_BUTTON.appendChild(anchorButton);
+    }
+  }
+
+  function clearModalButtons() {
+    while (MODAL_BUTTON.firstChild) {
+      MODAL_BUTTON.removeChild(MODAL_BUTTON.lastChild);
+    }
+  }
+
+  const CLOSE_BUTTON = document.querySelector(".close");
+
+  CLOSE_BUTTON.addEventListener("click", () => {
+    document.querySelector(".modal-wrap").style.display = "none";
+    clearModalButtons();
+  });
+}
