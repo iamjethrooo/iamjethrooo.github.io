@@ -374,6 +374,7 @@ li {
 
 #gallery {
   display: grid;
+  row-gap: 0;
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -437,9 +438,58 @@ li {
 .contact {
   height: 100%;
 }
-form {
-  width: 70%;
+
+.info-wrapper {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
   margin: 0 auto;
+}
+
+.extra-info {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.info {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 25px;
+  i {
+    height: 100%;
+    color: #66fcf1;
+    font-size: 25px;
+  }
+}
+
+.info-link {
+  border-right: 1px solid #c5c6c7;
+  text-align: right;
+  margin-right: 15px;
+  padding-right: 15px;
+  width: 80%;
+  h1 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+  }
+
+  a {
+    color: inherit;
+    font-size: 1.7rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+form {
+  display: inline-block;
+  width: 55%;
 }
 
 form label {
