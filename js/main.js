@@ -81,6 +81,8 @@ $(document).ready(function () {
   });
 
   $('nav a[href*="#"]').on("click", function () {
+    $("menu-toggler").removeClass("open");
+    $(".bar").removeClass("open");
     var anchor = $(this).attr("href");
     $("a").each(function () {
       $(this).removeClass("active");
@@ -180,6 +182,7 @@ FILTER_BUTTONS.forEach((filterButton) => {
   });
 });
 
+// Code to make label float when input element has focus
 const INPUTS = document.querySelectorAll(".input");
 
 INPUTS.forEach((input) => {
@@ -254,13 +257,6 @@ function initModals() {
   const DEMO_ICON_CLASS = "fa-external-link-alt";
   const GITHUB_ICON_CLASS = "fa-github";
 
-  let demoIcon = document.createElement("i");
-  demoIcon.classList.add("fas");
-  demoIcon.classList.add(DEMO_ICON_CLASS);
-  let githubIcon = document.createElement("i");
-  githubIcon.classList.add("fab");
-  githubIcon.classList.add(GITHUB_ICON_CLASS);
-
   const MODAL_BUTTON = document.querySelector("#modal-button");
   function fillModal(id) {
     document.querySelector(".info-box .title").textContent =
@@ -279,8 +275,12 @@ function initModals() {
 
     if (modalItem[`${id}`].demo) {
       let anchorButton = document.createElement("a");
+      anchorButton.target = "_blank";
       anchorButton.classList.add("button");
       anchorButton.href = modalItem[`${id}`].demo;
+      let demoIcon = document.createElement("i");
+      demoIcon.classList.add("fas");
+      demoIcon.classList.add(DEMO_ICON_CLASS);
       anchorButton.appendChild(demoIcon);
       anchorButton.appendChild(document.createTextNode("demo"));
       MODAL_BUTTON.appendChild(anchorButton);
@@ -288,6 +288,7 @@ function initModals() {
 
     if (modalItem[`${id}`].repo) {
       let anchorButton = document.createElement("a");
+      anchorButton.target = "_blank";
       let textNode;
       anchorButton.classList.add("button");
       if (modalItem[`${id}`].repo.language) {
@@ -299,6 +300,9 @@ function initModals() {
         textNode = document.createTextNode("repo");
         anchorButton.href = modalItem[`${id}`].repo;
       }
+      let githubIcon = document.createElement("i");
+      githubIcon.classList.add("fab");
+      githubIcon.classList.add(GITHUB_ICON_CLASS);
       anchorButton.appendChild(githubIcon);
       anchorButton.appendChild(textNode);
       MODAL_BUTTON.appendChild(anchorButton);
@@ -306,6 +310,7 @@ function initModals() {
 
     if (modalItem[`${id}`].repo2) {
       let anchorButton = document.createElement("a");
+      anchorButton.target = "_blank";
       let textNode;
       anchorButton.classList.add("button");
       if (modalItem[`${id}`].repo2.language) {
@@ -316,6 +321,9 @@ function initModals() {
       } else {
         anchorButton.href = modalItem[`${id}`].repo2;
       }
+        let githubIcon = document.createElement("i");
+        githubIcon.classList.add("fab");
+        githubIcon.classList.add(GITHUB_ICON_CLASS);
       anchorButton.appendChild(githubIcon);
       anchorButton.appendChild(textNode);
       MODAL_BUTTON.appendChild(anchorButton);
