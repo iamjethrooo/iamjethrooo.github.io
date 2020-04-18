@@ -271,6 +271,8 @@ function initModals() {
     if (modalItem[`${id}`].image) {
       document.querySelector(".carousel-image").src =
         "images/projects/" + modalItem[`${id}`].image;
+    } else {
+      document.querySelector(".carousel-image").style.display = "none";
     }
 
     if (modalItem[`${id}`].demo) {
@@ -321,9 +323,9 @@ function initModals() {
       } else {
         anchorButton.href = modalItem[`${id}`].repo2;
       }
-        let githubIcon = document.createElement("i");
-        githubIcon.classList.add("fab");
-        githubIcon.classList.add(GITHUB_ICON_CLASS);
+      let githubIcon = document.createElement("i");
+      githubIcon.classList.add("fab");
+      githubIcon.classList.add(GITHUB_ICON_CLASS);
       anchorButton.appendChild(githubIcon);
       anchorButton.appendChild(textNode);
       MODAL_BUTTON.appendChild(anchorButton);
