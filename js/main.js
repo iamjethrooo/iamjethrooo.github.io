@@ -241,6 +241,14 @@ function initModals() {
       demo: "https://iamjethrooo.github.io/rock-paper-scissors/",
       image: "rock-paper-scissors/1.png",
     },
+    floranteatlaura: {
+      title: "Florante at Laura: Visual Novel",
+      detail: "",
+      demo:
+        "https://iamjethrooo.github.io/florante-at-laura-visual-novel/web/index.html",
+      image: "florante-at-laura/1.png",
+      repo: "https://github.com/iamjethrooo/florante-at-laura-visual-novel",
+    },
     visualdesign: {
       title: "WALA PA PO HAHAHA",
       detail: "IYAK",
