@@ -369,7 +369,7 @@ li {
   align-items: center;
   position: fixed; }
   .modal-content .carousel {
-    background: url("/images/hex.gif") center no-repeat;
+    background: url("../images/hex.gif") center no-repeat;
     position: relative;
     height: 0;
     width: 100%;
