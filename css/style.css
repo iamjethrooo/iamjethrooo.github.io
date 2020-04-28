@@ -366,13 +366,27 @@ li {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; }
-  .modal-content .carousel img {
-    top: 0; }
+  align-items: center;
+  position: fixed; }
+  .modal-content .carousel {
+    background: url("/images/hex.gif") center no-repeat;
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-bottom: 56.25%; }
 
 .carousel-image {
+  position: absolute;
   height: 100%;
-  object-fit: cover; }
+  object-fit: cover;
+  top: 0; }
+
+.carousel-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
 
 .info-box {
   display: flex;
@@ -385,10 +399,12 @@ li {
 
 .info-wrap .title {
   font-size: 3rem;
+  font-weight: bold;
   margin-bottom: 0.2rem; }
 .info-wrap .tag {
   border-bottom: 1px solid #c5c6c7;
   font-size: 1.5rem;
+  font-weight: bold;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   width: 100%; }
@@ -425,7 +441,10 @@ li {
   font-size: 2.5rem;
   color: #bbb;
   cursor: pointer;
-  vertical-align: middle; }
+  vertical-align: middle;
+  transition: color 650ms; }
+  .close:hover {
+    color: #66fcf1; }
 
 #gallery {
   display: grid;
