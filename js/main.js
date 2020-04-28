@@ -213,7 +213,7 @@ function initModals() {
       title: "Calculator",
       tag: "Javascript & Java",
       detail:
-        "Calculators that I made. One is a web version using JavaScript, and one is a desktop version using Java.",
+        "These are calculators that I made. One is a web version using JavaScript, and one is a desktop version using Java.",
       repo: {
         language: "JavaScript",
         link: "https://github.com/iamjethrooo/calculator",
@@ -228,7 +228,7 @@ function initModals() {
     etchasketch: {
       title: "Etch a Sketch",
       tag: "JavaScript",
-      detail: "",
+      detail: "This is an online version of an Etch a Sketch.",
       repo: "https://github.com/iamjethrooo/etch-a-sketch",
       demo: "https://iamjethrooo.github.io/etch-a-sketch/",
       image: "etch-a-sketch/1.png",
@@ -236,7 +236,7 @@ function initModals() {
     rockpaperscissors: {
       title: "Rock Paper Scissors",
       tag: "JavaScript",
-      detail: "",
+      detail: "This is my attempt at making an online Rock Paper Scissors game.",
       repo: "https://github.com/iamjethrooo/rock-paper-scissors",
       demo: "https://iamjethrooo.github.io/rock-paper-scissors/",
       image: "rock-paper-scissors/1.png",
@@ -244,21 +244,24 @@ function initModals() {
     floranteatlaura: {
       title: "Florante at Laura: Visual Novel",
       tag: "Ren'Py(Python)",
-      detail: "",
+      detail: `This is a visual novel that me and my team made for our capstone project. It's objective is to gamify the learning experience of this Philippine Epic for students to understand it easier. It's still a work in progress.\r\n\r\nRole: Programmer`,
       demo:
         "https://iamjethrooo.github.io/florante-at-laura-visual-novel/web/index.html",
       image: "florante-at-laura/1.png",
       repo: "https://github.com/iamjethrooo/florante-at-laura-visual-novel",
     },
-    visualdesign: {
-      title: "WALA PA PO HAHAHA",
-      tag: "",
-      detail: "IYAK",
+    pomodoro: {
+      title: "Pomodoro Clock",
+      tag: "JavaScript",
+      detail: "This is a web version of a Pomodoro clock. The Pomodoro Technique is a popular time management method where a timer is used to break down work into 25 minute intervals, separated by 5 minute breaks.",
+      repo: "https://github.com/iamjethrooo/pomodoro",
+      demo: "https://iamjethrooo.github.io/pomodoro/",
+      image: "pomodoro/1.png",
     },
     area69: {
       title: "Area 69",
-      tag: "",
-      detail: "",
+      tag: "Animation",
+      detail: "Area 69 is an animation me and my team made for our final project in Animation.\r\n\r\nRole: Editor, Compositor, Cleanup Artist",
       embed_video:
         "https://drive.google.com/file/d/1EqDZHjx-y8EnMEpEOBzEdHmuLnCp2HBm/preview",
     },
@@ -284,8 +287,9 @@ function initModals() {
     } else {
       document.querySelector(".info-box .tag").textContent = "";
     }
+
     document.querySelector(".info-box .detail").textContent =
-      modalItem[`${id}`].detail;
+      modalItem[`${id}`].detail;    
 
     // For modal images
     if (modalItem[`${id}`].image) {
