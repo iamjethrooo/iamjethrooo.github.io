@@ -243,6 +243,7 @@ function initModals() {
     },
     floranteatlaura: {
       title: "Florante at Laura: Visual Novel",
+      tag: "Ren'Py(Python)",
       detail: "",
       demo:
         "https://iamjethrooo.github.io/florante-at-laura-visual-novel/web/index.html",
@@ -251,7 +252,15 @@ function initModals() {
     },
     visualdesign: {
       title: "WALA PA PO HAHAHA",
+      tag: "",
       detail: "IYAK",
+    },
+    area69: {
+      title: "Area 69",
+      tag: "",
+      detail: "",
+      embed_video:
+        "https://drive.google.com/file/d/1EqDZHjx-y8EnMEpEOBzEdHmuLnCp2HBm/preview",
     },
   };
 
@@ -272,17 +281,33 @@ function initModals() {
     if (modalItem[`${id}`].tag) {
       document.querySelector(".info-box .tag").textContent =
         modalItem[`${id}`].tag;
+    } else {
+      document.querySelector(".info-box .tag").textContent = "";
     }
     document.querySelector(".info-box .detail").textContent =
       modalItem[`${id}`].detail;
 
+    // For modal images
     if (modalItem[`${id}`].image) {
+      document.querySelector(".carousel-image").style.display = "initial";
       document.querySelector(".carousel-image").src =
         "images/projects/" + modalItem[`${id}`].image;
     } else {
       document.querySelector(".carousel-image").style.display = "none";
+      //document.querySelector(".carousel-image").src = "";
     }
 
+    // If modal has video instead of picture
+    if (modalItem[`${id}`].embed_video) {
+      document.querySelector(".carousel-video").style.display = "initial";
+      document.querySelector(".carousel-video").src =
+        modalItem[`${id}`].embed_video;
+    } else {
+      document.querySelector(".carousel-video").style.display = "none";
+      //document.querySelector(".carousel-video").src = "";
+    }
+
+    // For modal demo link
     if (modalItem[`${id}`].demo) {
       let anchorButton = document.createElement("a");
       anchorButton.target = "_blank";
@@ -296,6 +321,7 @@ function initModals() {
       MODAL_BUTTON.appendChild(anchorButton);
     }
 
+    // For modal repo link
     if (modalItem[`${id}`].repo) {
       let anchorButton = document.createElement("a");
       anchorButton.target = "_blank";
@@ -318,6 +344,7 @@ function initModals() {
       MODAL_BUTTON.appendChild(anchorButton);
     }
 
+    // If modal has second repository
     if (modalItem[`${id}`].repo2) {
       let anchorButton = document.createElement("a");
       anchorButton.target = "_blank";
