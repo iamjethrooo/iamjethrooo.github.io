@@ -412,16 +412,29 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
   .carousel {
-    img {
-      top: 0;
-    }
+    background: url("/images/hex.gif") center no-repeat;
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-bottom: 56.25%;
   }
 }
 
 .carousel-image {
+  position: absolute;
   height: 100%;
   object-fit: cover;
+  top: 0;
+}
+
+.carousel-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .info-box {
@@ -436,11 +449,13 @@ li {
 .info-wrap {
   .title {
     font-size: 3rem;
+    font-weight: bold;
     margin-bottom: 0.2rem;
   }
   .tag {
     border-bottom: 1px solid #c5c6c7;
     font-size: 1.5rem;
+    font-weight: bold;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     width: 100%;
@@ -487,6 +502,10 @@ li {
   color: #bbb;
   cursor: pointer;
   vertical-align: middle;
+  transition: color 650ms;
+  &:hover {
+    color: #66fcf1;
+  }
 }
 
 #gallery {
