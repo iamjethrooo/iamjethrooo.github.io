@@ -451,7 +451,7 @@ li {
   justify-content: space-around;
   animation: fadeIn 1s; }
   .portfolio-item:hover .portfolio-img {
-    opacity: 0; }
+    opacity: 0.1; }
   .portfolio-item:hover .portfolio-text {
     cursor: default;
     opacity: 1;
