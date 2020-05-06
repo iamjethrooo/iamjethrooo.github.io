@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:image" content="images/logo-dark.png" />
+    <meta
+      property="og:description"
+      content="jethro estangki | online portfolio"
+    />
+    <link rel="icon" href="images/logo-dark.png" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script
+      src="https://kit.fontawesome.com/30beb5b11e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css?v=3.0" />
+    <title>jethro estangki | online portfolio</title>
+  </head>
+
+  <body>
+    <section class="home" id="home">
+      <div class="menu-toggler no-select" id="menu-toggler">
+        <div class="bar no-select"></div>
+      </div>
+      <div class="landing-text no-select">
+        <h1>jethro estangki</h1>
+        <h6
+          class="txt-type"
+          data-wait="3000"
+          data-words='["ict student", "aspiring developer", "gamer"]'
+        ></h6>
+      </div>
+      <div class="social-media">
+        <ul class="nav-list">
+          <li>
+            <a
+              data-aos="zoom-in"
+              data-aos-delay="300"
+              href="https://www.linkedin.com/in/jethro-estangki/"
+              target="_blank"
+              class="icon-link"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              data-aos="zoom-in"
+              data-aos-delay="600"
+              href="https://github.com/iamjethrooo"
+              target="_blank"
+              class="icon-link"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              data-aos="zoom-in"
+              data-aos-delay="900"
+              href="https://trello.com/jethroestangki"
+              target="_blank"
+              class="icon-link"
+            >
+              <i class="fab fa-trello"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              data-aos="zoom-in"
+              data-aos-delay="1200"
+              href="mailto:estangkij@gmail.com"
+              target="_blank"
+              class="icon-link"
+            >
+              <i class="far fa-envelope"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <nav class="top-nav" id="top-nav">
+        <ul class="nav-list">
+          <li>
+            <a href="#home" class="nav-link active">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li>
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="profile-img" data-aos="fade-right" data-aos-delay="300">
+          <img src="images/profile.jpg" alt="" />
+        </div>
+        <div class="about-details" data-aos="fade-left" data-aos-delay="300">
+          <div class="about-heading no-select">
+            <h1>About</h1>
+            <h6>
+              Myself
+            </h6>
+          </div>
+          <p>
+            Jethro Estangki is an aspiring developer and a senior high school
+            ICT student at the
+            <a target="_blank" href="http://www.uc-bcf.edu.ph/"
+              >University of the Cordilleras</a
+            >.<br /><br />
+            He is driven by his desire for knowledge and passion for
+            programming. He is currently learning Web Development using various
+            online sources such as
+            <a href="https://www.theodinproject.com/">The Odin Project</a> and
+            <a href="https://cs50.harvard.edu/x/2020/">CS50</a>.<br /><br />
+            When he isn't glued to his screen, you'll find Jethro reading manga,
+            playing video games, or doing some outdoor activity.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--Portfolio-->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h1>Projects</h1>
+        </div>
+        <nav class="filter-wrapper">
+          <ul>
+            <li>
+              <button class="filter active" data-filter="portfolio-item">
+                all
+              </button>
+            </li>
+            <li>
+              <button
+                data-aos-offset="0"
+                class="filter"
+                data-filter="programming"
+              >
+                programming
+              </button>
+            </li>
+            <li>
+              <button
+                data-aos-offset="0"
+                class="filter"
+                data-filter="visual-design"
+              >
+                visual design
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="modal-wrap">
+          <div class="modal-content">
+            <div class="carousel">
+              <img class="carousel-image" src="" alt="" srcset="" />
+              <iframe
+                class="carousel-video"
+                src=""
+                width="100%"
+                height="100%"
+                frameborder="0"
+              ></iframe>
+            </div>
+            <div class="info-box">
+              <div class="info-wrap">
+                <div class="title"></div>
+                <div class="tag"></div>
+                <div class="detail"></div>
+              </div>
+              <div class="button-wrap">
+                <div class="row" id="modal-button"></div>
+                <div class="row"><i class="close fas fa-times"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="gallery" data-aos="fade-up">
+          <div class="programming portfolio-item">
+            <div class="portfolio-img">
+              <img src="images/projects/florante-at-laura/1.png" alt="" />
+            </div>
+            <div class="portfolio-text">
+              <div class="portfolio-title">Florante at Laura: Visual Novel</div>
+              <span class="highlight">Ren'Py</span>
+            </div>
+            <button class="button" id="floranteatlaura">View Details</button>
+          </div>
+          <div class="programming portfolio-item">
+            <div class="portfolio-img">
+              <img src="images/projects/pomodoro/1.png" alt="" />
+            </div>
+            <div class="portfolio-text">
+              <div class="portfolio-title">Pomodoro Clock</div>
+              <span class="highlight">JavaScript</span>
+            </div>
+            <button class="button" id="pomodoro">View Details</button>
+          </div>
+          <div class="programming portfolio-item">
+            <div class="portfolio-img">
+              <img src="images/projects/cryption/1.png" alt="" />
+            </div>
+            <div class="portfolio-text">
+              <div class="portfolio-title">cryption</div>
+              <span class="highlight">JavaScript</span>
+            </div>
+            <button class="button" id="cryption">View Details</button>
+          </div>
+          <div class="programming portfolio-item">
+            <div class="portfolio-img">
+              <img src="images/projects/calculator/1.png" alt="" />
+            </div>
+            <div class="portfolio-text">
+              <div class="portfolio-title">Calculator</div>
+              <span class="highlight">JavaScript & Java</span>
+            </div>
+            <button class="button" id="calculator">View Details</button>
+          </div>
+          <div class="programming portfolio-item">
+            <div class="portfolio-img">
+              <img src="images/projects/etch-a-sketch/1.png" alt="" />
+            </div>
+            <div class="portfolio-text">
+              <div class="portfolio-title">Etch a Sketch</div>
+              <span class="highlight">JavaScript</span>
+            </div>
+            <button class="button" id="etchasketch">View Details</button>
+          </div>
+          <div class="programming portfolio-item">
+            <div class="portfolio-img">
+              <img src="images/projects/rock-paper-scissors/1.png" alt="" />
+            </div>
+            <div class="portfolio-text">
+              <div class="portfolio-title">Rock Paper Scissors</div>
+              <span class="highlight">JavaScript</span>
+            </div>
+            <button class="button" id="rockpaperscissors">View Details</button>
+          </div>
+          <div class="visual-design portfolio-item">
+            <div class="portfolio-img">
+              <img src="images/projects/animation/area 69.png" alt="" />
+            </div>
+            <div class="portfolio-text">
+              <div class="portfolio-title">Area 69</div>
+              <span class="highlight">Animation</span>
+            </div>
+            <button class="button" id="area69">View Details</button>
+          </div>
+        </div>
+      </div>
+      <!--Portfolio-->
+    </section>
+
+    <!--Contact-->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h1>Contact</h1>
+          <h6>if you have questions, feel free to get in touch.</h6>
+        </div>
+        <div class="info-wrapper">
+          <div class="extra-info">
+            <a
+              class="info"
+              data-aos="fade-right"
+              target="_blank"
+              href="https://www.linkedin.com/in/jethro-estangki/"
+            >
+              <div class="info-link">
+                <h1>linkedin</h1>
+                <h1>Jethro Estangki</h1>
+              </div>
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a
+              class="info"
+              data-aos="fade-right"
+              data-aos-delay="350"
+              target="_blank"
+              href="https://github.com/iamjethrooo"
+            >
+              <div class="info-link">
+                <h1>github</h1>
+                <h1>iamjethrooo</h1>
+              </div>
+              <i class="fab fa-github"></i>
+            </a>
+
+            <a
+              class="info"
+              data-aos="fade-right"
+              data-aos-delay="700"
+              target="_blank"
+              href="https://trello.com/jethroestangki"
+            >
+              <div class="info-link">
+                <h1>trello</h1>
+                <h1>Jethro Estangki</h1>
+              </div>
+              <i class="fab fa-trello"></i>
+            </a>
+
+            <a
+              class="info"
+              data-aos="fade-right"
+              data-aos-delay="1050"
+              target="_blank"
+              href="mailto:estangkij@gmail.com"
+            >
+              <div class="info-link">
+                <h1>email</h1>
+                <h1>estangkij@gmail.com</h1>
+              </div>
+              <i class="far fa-envelope"></i>
+            </a>
+          </div>
+          <form
+            action="https://formspree.io/mvobllzp"
+            method="POST"
+            data-aos="fade-up"
+          >
+            <div class="input-box">
+              <label for="name">name:</label>
+              <input class="input" type="text" id="name" name="name" required />
+            </div>
+            <div class="input-box">
+              <label for="email">email:</label>
+              <input
+                class="input"
+                type="text"
+                id="email"
+                name="_replyto"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <label for="message">message:</label>
+              <textarea class="input" name="message" id="message"></textarea>
+            </div>
+            <button type="submit">SEND</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!--Contact-->
+
+    <!--Footer-->
+    <footer class="copyright">
+      <div class="up" id="up">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+      <p>jethro estangki &copy; 2020</p>
+    </footer>
+    <!--Footer-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/main.js?v=3.0"></script>
+  </body>
+</html>
