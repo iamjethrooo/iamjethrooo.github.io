@@ -228,7 +228,8 @@ function initModals() {
     etchasketch: {
       title: "Etch a Sketch",
       tag: "JavaScript",
-      detail: "This is an online version of an Etch a Sketch.",
+      detail:
+        "This is an online version of an Etch a Sketch. The user hovers his mouse over the canvas, and the cells light . It can be used to make simple pixel art, or whatever you want.",
       repo: "https://github.com/iamjethrooo/etch-a-sketch",
       demo: "https://iamjethrooo.github.io/etch-a-sketch/",
       image: "etch-a-sketch/1.png",
@@ -236,7 +237,8 @@ function initModals() {
     rockpaperscissors: {
       title: "Rock Paper Scissors",
       tag: "JavaScript",
-      detail: "This is my attempt at making an online Rock Paper Scissors game.",
+      detail:
+        "This is an online Rock Paper Scissors game. A player plays with a bot for 5 rounds, then the score is tallied. The player can then choose to play more rounds or stop playing the game.",
       repo: "https://github.com/iamjethrooo/rock-paper-scissors",
       demo: "https://iamjethrooo.github.io/rock-paper-scissors/",
       image: "rock-paper-scissors/1.png",
@@ -253,7 +255,8 @@ function initModals() {
     pomodoro: {
       title: "Pomodoro Clock",
       tag: "JavaScript",
-      detail: "This is a web version of a Pomodoro clock. The Pomodoro Technique is a popular time management method where a timer is used to break down work into 25 minute intervals, separated by 5 minute breaks.",
+      detail:
+        "This is a web version of a Pomodoro clock. The Pomodoro Technique is a popular time management method where a timer is used to break down work into 25 minute intervals, separated by 5 minute breaks.",
       repo: "https://github.com/iamjethrooo/pomodoro",
       demo: "https://iamjethrooo.github.io/pomodoro/",
       image: "pomodoro/1.png",
@@ -261,9 +264,19 @@ function initModals() {
     area69: {
       title: "Area 69",
       tag: "Animation",
-      detail: "Area 69 is an animation me and my team made for our final project in Animation.\r\n\r\nRole: Editor, Compositor, Cleanup Artist",
+      detail:
+        "Area 69 is an animation me and my team made for our final project in Animation.\r\n\r\nRole: Editor, Compositor, Cleanup Artist",
       embed_video:
         "https://drive.google.com/file/d/1EqDZHjx-y8EnMEpEOBzEdHmuLnCp2HBm/preview",
+    },
+    cryption: {
+      title: "cryption",
+      tag: "JavaScript",
+      detail:
+        "cryption is an online cryptography tool used to encrypt and decrypt messages. It currently only supports 26 character alphanumeric keys, but I plan on expanding on that in the future, along with adding encryption/decryption algorithms.",
+      repo: "https://github.com/iamjethrooo/cryption",
+      demo: "https://iamjethrooo.github.io/cryption/",
+      image: "cryption/1.png",
     },
   };
 
@@ -289,7 +302,7 @@ function initModals() {
     }
 
     document.querySelector(".info-box .detail").textContent =
-      modalItem[`${id}`].detail;    
+      modalItem[`${id}`].detail;
 
     // For modal images
     if (modalItem[`${id}`].image) {
