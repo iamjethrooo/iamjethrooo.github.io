@@ -80,10 +80,10 @@ $(document).ready(function () {
     $(".top-nav").removeClass("open");
   });
 
-  $('nav a[href*="#"]').on("click", function () {
+  $('nav a[data-link*="#"]').on("click", function () {
     $("menu-toggler").removeClass("open");
     $(".bar").removeClass("open");
-    var anchor = $(this).attr("href");
+    var anchor = $(this).attr("data-link");
     $("a").each(function () {
       $(this).removeClass("active");
     });
@@ -136,7 +136,7 @@ function onScroll(event) {
 
   $("nav a").each(function () {
     let currLink = $(this);
-    let refElement = $(currLink.attr("href"));
+    let refElement = $(currLink.attr("data-link"));
     if (
       refElement.position().top - 100 <= scrollPos &&
       refElement.position().top + refElement.height() >= scrollPos
