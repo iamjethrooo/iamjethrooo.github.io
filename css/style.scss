@@ -41,6 +41,7 @@ a {
 .about a {
   color: #66fcf1;
   &:hover {
+    cursor: pointer;
     text-decoration: underline;
   }
 }
@@ -621,6 +622,7 @@ li {
   vertical-align: middle;
   flex-direction: row;
   margin-top: 2.5rem;
+  width: 100%;
   &:hover h1 {
     text-decoration: underline;
   }
@@ -636,9 +638,9 @@ li {
   text-align: right;
   margin-right: 1.5rem;
   padding-right: 1.5rem;
-  width: 100%;
+  width: 80%;
   h1 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-bottom: 1.5rem;
 
     &:last-child {

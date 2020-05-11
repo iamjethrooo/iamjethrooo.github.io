@@ -36,6 +36,7 @@ a {
   color: #66fcf1; }
   .nav-link:hover,
   .about a:hover {
+    cursor: pointer;
     text-decoration: underline; }
 
 img {
@@ -524,7 +525,8 @@ li {
   align-items: center;
   vertical-align: middle;
   flex-direction: row;
-  margin-top: 2.5rem; }
+  margin-top: 2.5rem;
+  width: 100%; }
   .info:hover h1 {
     text-decoration: underline; }
   .info i {
@@ -537,9 +539,9 @@ li {
   text-align: right;
   margin-right: 1.5rem;
   padding-right: 1.5rem;
-  width: 100%; }
+  width: 80%; }
   .info-link h1 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-bottom: 1.5rem; }
     .info-link h1:last-child {
       margin-bottom: 0; }
