@@ -213,7 +213,7 @@ function initModals() {
       title: "Calculator",
       tag: "Javascript & Java",
       detail:
-        "These are calculators that I made. One is a web version using JavaScript, and one is a desktop version using Java.",
+        "These are calculators that I made. One is a web version using JavaScript, and one is a desktop version using Java. The Java version was a requirement for our Programming class, and the JavaScript version was part of The Odin Project's curriculum.",
       repo: {
         language: "JavaScript",
         link: "https://github.com/iamjethrooo/calculator",
@@ -229,7 +229,7 @@ function initModals() {
       title: "Etch a Sketch",
       tag: "JavaScript",
       detail:
-        "This is an online version of an Etch a Sketch. The user hovers his mouse over the canvas, and the cells light . It can be used to make simple pixel art, or whatever you want.",
+        "This is an online version of an Etch a Sketch. The user hovers his mouse over the canvas, and the cells light . It can be used to make simple pixel art, or whatever you want. This project is part of The Odin Project's curriculum, and it's purpose is to get you familiar with manipulating DOM Elements.",
       repo: "https://github.com/iamjethrooo/etch-a-sketch",
       demo: "https://iamjethrooo.github.io/etch-a-sketch/",
       image: "etch-a-sketch/1.png",
@@ -238,7 +238,7 @@ function initModals() {
       title: "Rock Paper Scissors",
       tag: "JavaScript",
       detail:
-        "This is an online Rock Paper Scissors game. A player plays with a bot for 5 rounds, then the score is tallied. The player can then choose to play more rounds or stop playing the game.",
+        "This is an online Rock Paper Scissors game. A player plays with a bot for 5 rounds, then the score is tallied. The player can then choose to play more rounds or stop playing the game. This project is part of the Odin Project's curriculum, and it's purpose is to get you familiar with JavaScript in general.",
       repo: "https://github.com/iamjethrooo/rock-paper-scissors",
       demo: "https://iamjethrooo.github.io/rock-paper-scissors/",
       image: "rock-paper-scissors/1.png",
@@ -246,7 +246,7 @@ function initModals() {
     floranteatlaura: {
       title: "Florante at Laura: Visual Novel",
       tag: "Ren'Py(Python)",
-      detail: `This is a visual novel that me and my team made for our capstone project. It's objective is to gamify the learning experience of this Philippine Epic for students to understand it easier. It's still a work in progress.\r\n\r\nRole: Programmer`,
+      detail: `This is a visual novel that me and my team made for our capstone project. It's objective is to gamify the learning experience of this Philippine Epic for students to understand it easier. This is a work in progress.\r\n\r\nRole: Programmer`,
       demo:
         "https://iamjethrooo.github.io/florante-at-laura-visual-novel/web/index.html",
       image: "florante-at-laura/1.png",
@@ -273,10 +273,19 @@ function initModals() {
       title: "cryption",
       tag: "JavaScript",
       detail:
-        "cryption is an online cryptography tool used to encrypt and decrypt messages. It currently only supports 26 character alphanumeric keys, but I plan on expanding on that in the future, along with adding encryption/decryption algorithms.",
+        "cryption is an online cryptography tool used to encrypt and decrypt messages. It currently only supports one method of cryptography. I made this because I got,and still am, curious about cryptography. This is a personal project and a work in progress. ",
       repo: "https://github.com/iamjethrooo/cryption",
       demo: "https://iamjethrooo.github.io/cryption/",
       image: "cryption/1.png",
+    },
+    electionsystem: {
+      title: "Election System",
+      tag: "Java/Derby SQL",
+      detail:
+        "This is a console-based java election system. I made it in the 1st semester of grade 12 for our final project in Programming. It does the job, it's functional, but still has a lot of hidden bugs.",
+      repo: "https://github.com/iamjethrooo/java-election-system",
+      // demo: "https://iamjethrooo.github.io/cryption/",
+      image: "election-system/1.png",
     },
   };
 
