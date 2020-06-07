@@ -273,7 +273,7 @@ function initModals() {
       title: "cryption",
       tag: "JavaScript",
       detail:
-        "cryption is an online cryptography tool used to encrypt and decrypt messages. It currently only supports one method of cryptography. I made this because I got,and still am, curious about cryptography. This is a personal project and a work in progress. ",
+        "cryption is an online cryptography tool used to encrypt and decrypt messages. It only supports one method of cryptography. This is a work in progress. ",
       repo: "https://github.com/iamjethrooo/cryption",
       demo: "https://iamjethrooo.github.io/cryption/",
       image: "cryption/1.png",
@@ -282,9 +282,8 @@ function initModals() {
       title: "Election System",
       tag: "Java/Derby SQL",
       detail:
-        "This is a console-based java election system. I made it in the 1st semester of grade 12 for our final project in Programming. It does the job, it's functional, but still has a lot of hidden bugs.",
+        "This is a console-based java election system. It was made in the 1st semester of grade 12 for our final project in Programming.",
       repo: "https://github.com/iamjethrooo/java-election-system",
-      // demo: "https://iamjethrooo.github.io/cryption/",
       image: "election-system/1.png",
     },
   };
