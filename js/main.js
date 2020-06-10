@@ -234,14 +234,14 @@ function initModals() {
       demo: "https://iamjethrooo.github.io/etch-a-sketch/",
       image: "etch-a-sketch/1.png",
     },
-    rockpaperscissors: {
-      title: "Rock Paper Scissors",
+    library: {
+      title: "Library",
       tag: "JavaScript",
       detail:
-        "This is an online Rock Paper Scissors game. A player plays with a bot for 5 rounds, then the score is tallied. The player can then choose to play more rounds or stop playing the game. This project is part of the Odin Project's curriculum, and it's purpose is to get you familiar with JavaScript in general.",
-      repo: "https://github.com/iamjethrooo/rock-paper-scissors",
-      demo: "https://iamjethrooo.github.io/rock-paper-scissors/",
-      image: "rock-paper-scissors/1.png",
+        "This is an online library that uses local storage to store data. You can add new books and check off the ones you've already read.",
+      repo: "https://github.com/iamjethrooo/library",
+      demo: "https://iamjethrooo.github.io/library/",
+      image: "library/1.png",
     },
     floranteatlaura: {
       title: "Florante at Laura: Visual Novel",
