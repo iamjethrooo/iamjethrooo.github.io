@@ -286,13 +286,42 @@ function initModals() {
       repo: "https://github.com/iamjethrooo/java-election-system",
       image: "election-system/1.png",
     },
+    walkcycle: {
+      title: "Walk Cycle",
+      tag: "Animation",
+      detail:
+        "This is an activity we made in Grade 12 for our Animation class.",
+      image: "animation/walk-cycle.gif",
+    },
+    jumpcycle: {
+      title: "Jump Cycle",
+      tag: "Animation",
+      detail:
+        "This is an activity we made in Grade 12 for our Animation class.",
+      image: "animation/jump-cycle.gif",
+    },
+    cleanupcat: {
+      title: "Cleanup Cat",
+      tag: "Animation",
+      detail:
+        "This is an activity we made in Grade 12 for our Animation class.",
+      image: "animation/cleanup-cat.png",
+    },
+    eyesnoselips: {
+      title: "Eyes, Nose, and Lips",
+      tag: "Animation",
+      detail:
+        "This is an activity we made in Grade 11 for our Animation class.",
+      image: "animation/eyes-nose-lips.png",
+    },
   };
 
   const GALLERY_BUTTONS = document.querySelectorAll("#gallery .button");
+  const MODAL = document.querySelector(".modal-wrap");
   GALLERY_BUTTONS.forEach((galleryButton) => {
     galleryButton.addEventListener("click", () => {
       fillModal(galleryButton.id);
-      document.querySelector(".modal-wrap").style.display = "flex";
+      MODAL.style.display = "flex";
     });
   });
   const DEMO_ICON_CLASS = "fa-external-link-alt";
@@ -401,7 +430,12 @@ function initModals() {
   const CLOSE_BUTTON = document.querySelector(".close");
 
   CLOSE_BUTTON.addEventListener("click", () => {
-    document.querySelector(".modal-wrap").style.display = "none";
+    MODAL.style.display = "none";
+    clearModalButtons();
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target == MODAL) MODAL.style.display = "none";
     clearModalButtons();
   });
 }
