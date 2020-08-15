@@ -319,6 +319,7 @@ function initModals() {
   const MODAL_WRAP = document.querySelector(".modal-wrap");
   GALLERY_BUTTONS.forEach((galleryButton) => {
     galleryButton.addEventListener("click", () => {
+      clearModalButtons();
       fillModal(galleryButton.id);
       MODAL_WRAP.style.display = "flex";
     });
@@ -434,5 +435,9 @@ function initModals() {
   CLOSE_BUTTON.addEventListener("click", () => {
     MODAL_WRAP.style.display = "none";
     clearModalButtons();
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target == MODAL_WRAP) MODAL_WRAP.style.display = "none";
   });
 }
