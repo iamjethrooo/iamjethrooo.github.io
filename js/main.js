@@ -247,8 +247,7 @@ function initModals() {
       title: "Florante at Laura: Visual Novel",
       tag: "Ren'Py(Python)",
       detail: `This is a visual novel that me and my team made for our capstone project. It's objective is to gamify the learning experience of this Philippine Epic for students to understand it easier. This is a work in progress.\r\n\r\nRole: Programmer`,
-      demo:
-        "https://iamjethrooo.github.io/florante-at-laura-visual-novel/web/index.html",
+      demo:"https://iamjethrooo.github.io/florante-at-laura-visual-novel/web/index.html",
       image: "florante-at-laura/1.png",
       repo: "https://github.com/iamjethrooo/florante-at-laura-visual-novel",
     },
@@ -317,11 +316,11 @@ function initModals() {
   };
 
   const GALLERY_BUTTONS = document.querySelectorAll("#gallery .button");
-  const MODAL = document.querySelector(".modal-wrap");
+  const MODAL_WRAP = document.querySelector(".modal-wrap");
   GALLERY_BUTTONS.forEach((galleryButton) => {
     galleryButton.addEventListener("click", () => {
       fillModal(galleryButton.id);
-      MODAL.style.display = "flex";
+      MODAL_WRAP.style.display = "flex";
     });
   });
   const DEMO_ICON_CLASS = "fa-external-link-alt";
@@ -372,7 +371,9 @@ function initModals() {
       demoIcon.classList.add(DEMO_ICON_CLASS);
       anchorButton.appendChild(demoIcon);
       anchorButton.appendChild(document.createTextNode("demo"));
+
       MODAL_BUTTON.appendChild(anchorButton);
+      console.log(MODAL_BUTTON);
     }
 
     // For modal repo link
@@ -395,6 +396,7 @@ function initModals() {
       githubIcon.classList.add(GITHUB_ICON_CLASS);
       anchorButton.appendChild(githubIcon);
       anchorButton.appendChild(textNode);
+
       MODAL_BUTTON.appendChild(anchorButton);
     }
 
@@ -430,12 +432,7 @@ function initModals() {
   const CLOSE_BUTTON = document.querySelector(".close");
 
   CLOSE_BUTTON.addEventListener("click", () => {
-    MODAL.style.display = "none";
-    clearModalButtons();
-  });
-
-  window.addEventListener("click", (e) => {
-    if (e.target == MODAL) MODAL.style.display = "none";
+    MODAL_WRAP.style.display = "none";
     clearModalButtons();
   });
 }
