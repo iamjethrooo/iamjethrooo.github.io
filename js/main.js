@@ -149,6 +149,7 @@ function onScroll(event) {
   });
 }
 
+// Codes below is for filtering projects based on tags
 const FILTER_BUTTONS = document.querySelectorAll(".filter");
 
 function filter(className) {
@@ -207,6 +208,9 @@ itemName: {
   package: ""
 }
 */
+/**
+ * Initialized modals in Projects section
+ */
 function initModals() {
   let modalItem = {
     calculator: {
