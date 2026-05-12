@@ -9,7 +9,7 @@ export default function Timeline() {
   return (
     <section
       id="timeline"
-      className="h-screen flex flex-col justify-center items-start"
+      className="min-h-screen flex flex-col justify-center items-start"
     >
       <h2 className="text-xs uppercase tracking-widest text-zinc-500 mb-12">
         Experience Timeline
