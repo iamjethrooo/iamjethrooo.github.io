@@ -15,7 +15,7 @@ export default function Projects() {
 
         <div className="grid md:grid-cols-3 gap-8 w-full">
 
-          {projects.map((project, i) => (
+          {projects.map((project) => (
             <button
               onClick={() => setSelectedProject(project)}
               className="group border border-zinc-800 rounded-xl overflow-hidden
