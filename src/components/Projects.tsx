@@ -99,7 +99,7 @@ export default function Projects() {
                 </div>
 
                 <div className="flex items-center justify-between pt-2">
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 items-center">
                     {selectedProject.demo && (
                       <a
                         href={selectedProject.demo}
