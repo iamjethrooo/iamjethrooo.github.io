@@ -13,7 +13,7 @@ export default function Projects() {
           Projects
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8 w-full">
+        <div className="grid md:grid-cols-2 gap-8 w-full">
 
           {projects.map((project) => (
             <button
@@ -68,10 +68,10 @@ export default function Projects() {
       {
         selectedProject && (
           <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-6">
-            <div className="w-full max-w-2xl rounded-2xl border border-zinc-800 bg-zinc-950 overflow-hidden">
+            <div className="w-full max-w-4xl rounded-2xl border border-zinc-800 bg-zinc-950 overflow-y-auto max-h-[90vh]">
               <img
                 src={selectedProject.images[0]}
-                className="w-full h-64 object-cover"
+                className="w-full object-cover"
               />
               <div className="p-6 space-y-4">
 
@@ -99,26 +99,28 @@ export default function Projects() {
                 </div>
 
                 <div className="flex items-center justify-between pt-2">
-                  {selectedProject.demo && (
-                    <a
-                      href={selectedProject.demo}
-                      target="_blank"
-                      className="text-sm text-white bg-blue-500/10 border border-blue-500/20
+                  <div className="flex gap-2">
+                    {selectedProject.demo && (
+                      <a
+                        href={selectedProject.demo}
+                        target="_blank"
+                        className="text-sm text-white bg-blue-500/10 border border-blue-500/20
                  px-3 py-1.5 rounded-md hover:bg-blue-500/20 transition"
-                    >
-                      View Demo
-                    </a>
-                  )}
+                      >
+                        View Demo
+                      </a>
+                    )}
 
-                  {selectedProject.link && (
-                    <a
-                      href={selectedProject.link}
-                      target="_blank"
-                      className="text-sm text-blue-400 hover:text-blue-300"
-                    >
-                      View Repository
-                    </a>
-                  )}
+                    {selectedProject.link && (
+                      <a
+                        href={selectedProject.link}
+                        target="_blank"
+                        className="text-sm text-blue-400 hover:text-blue-300"
+                      >
+                        View Repository
+                      </a>
+                    )}
+                  </div>
 
                   <button
                     onClick={() => setSelectedProject(null)}
