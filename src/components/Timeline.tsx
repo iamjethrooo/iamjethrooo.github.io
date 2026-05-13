@@ -37,15 +37,15 @@ export default function Timeline() {
               </p>
 
               {/* title row */}
-              <div className="flex items-center gap-2 mt-1">
+              <div className="items-center gap-2 mt-1 md:flex">
                 <span>{typeIcon[item.type]}</span>
 
-                <h3 className="text-base font-medium text-white leading-snug">
+                <h3 className="text-base font-medium text-white leading-snug ">
                   {item.title}
                 </h3>
 
                 <span className="text-zinc-500 font-normal">
-                  · {item.company}
+                  <span className="hidden md:inline">· </span>{item.company}
                 </span>
               </div>
 

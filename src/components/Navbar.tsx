@@ -2,7 +2,8 @@ import { useEffect, useState } from "react"
 
 const links = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About" },
+  { id: "about", label: "About Me" },
+  { id: "timeline", label: "Timeline" },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" }
 ]
@@ -16,7 +17,6 @@ export default function Navbar() {
 
       links.forEach((link) => {
         const el = document.getElementById(link.id)
-        console.log(el);
         if (!el) return
 
         const offsetTop = el.offsetTop - 120
@@ -65,10 +65,6 @@ export default function Navbar() {
               </button>
             ))}
           </nav>
-
-          <div className="md:hidden text-xs text-zinc-500">
-            {active.toUpperCase()}
-          </div>
         </div>
       </div>
     </header>

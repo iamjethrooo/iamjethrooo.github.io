@@ -15,7 +15,7 @@ export const timeline: TimelineItem[] = [
     company: "Forecasting and Planning Technologies, Inc.",
     date: "2023 - Present",
     description:
-      "Built and maintained features for enterprise planning systems used in business-critical workflows. Focused on performance, reliability, and delivering fixes in a production environment under tight deadlines.",
+      "Built and maintained features for enterprise planning systems used in business-critical workflows. Focused on performance, reliability, and delivering fixes in production environments under tight deadlines.",
     stack: ["C#", "ASP.NET", "MSSQL", "HTML/CSS", "JavaScript"],
   },
   {
