@@ -7,7 +7,7 @@ export default function Contact() {
             </h2>
 
             <p className="text-zinc-400 max-w-2xl leading-relaxed">
-                Open to internships, freelance work, or full-time opportunities.
+                Open to freelance work or full-time opportunities.
                 If you’re building something interesting, feel free to reach out.
             </p>
 

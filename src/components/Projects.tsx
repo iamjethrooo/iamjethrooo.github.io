@@ -104,7 +104,7 @@ export default function Projects() {
                       <a
                         href={selectedProject.demo}
                         target="_blank"
-                        className="text-sm text-white bg-blue-500/10 border border-blue-500/20
+                        className="text-xs md:text-sm text-white bg-blue-500/10 border border-blue-500/20
                  px-3 py-1.5 rounded-md hover:bg-blue-500/20 transition"
                       >
                         View Demo
@@ -115,7 +115,7 @@ export default function Projects() {
                       <a
                         href={selectedProject.link}
                         target="_blank"
-                        className="text-sm text-blue-400 hover:text-blue-300"
+                        className="text-xs md:text-sm text-blue-400 hover:text-blue-300"
                       >
                         View Repository
                       </a>
@@ -124,7 +124,7 @@ export default function Projects() {
 
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="text-sm text-zinc-500 hover:text-white"
+                    className="text-xs md:text-sm text-zinc-500 hover:text-white"
                   >
                     Close
                   </button>
