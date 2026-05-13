@@ -38,11 +38,14 @@ export default function Timeline() {
 
               {/* title row */}
               <div className="items-center gap-2 mt-1 md:flex">
-                <span>{typeIcon[item.type]}</span>
+                <div className="flex">
+                  <span>{typeIcon[item.type]}</span>
 
-                <h3 className="text-base font-medium text-white leading-snug ">
-                  {item.title}
-                </h3>
+                  <h3 className="text-base font-medium text-white leading-snug ">
+                    {item.title}
+                  </h3>
+                </div>
+
 
                 <span className="text-zinc-500 font-normal">
                   <span className="hidden md:inline">· </span>{item.company}
