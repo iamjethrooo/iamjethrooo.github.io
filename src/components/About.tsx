@@ -22,7 +22,7 @@ export default function About() {
                 I like activities that require focus, pattern recognition, and consistency.
             </p>
 
-            <div className="flex flex-wrap gap-2 pt-2">
+            <div className="hidden flex flex-wrap gap-2 pt-2">
                 {["C#", "ASP.NET WebForms", "PHP", "JavaScript", "SQL", "Linux"].map((tech) => (
                     <span
                         key={tech}
