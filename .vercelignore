@@ -1,0 +1,8 @@
+# Defense in depth for a future approved CLI upload; Git deploys use tracked files.
+.private-assets/
+.git/
+.vercel/
+.env
+.env.*
+*.fig
+*.figjam
