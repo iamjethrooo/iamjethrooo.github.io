@@ -2,70 +2,51 @@ import { useEffect, useState } from "react"
 
 const links = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About Me" },
-  { id: "timeline", label: "Timeline" },
+  { id: "timeline", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "contact", label: "Contact" }
+  { id: "about", label: "About & skills" },
+  { id: "contact", label: "Contact" },
 ]
 
 export default function Navbar() {
   const [active, setActive] = useState("home")
 
   useEffect(() => {
-    const handler = () => {
-      const scrollY = window.scrollY
-
-      links.forEach((link) => {
-        const el = document.getElementById(link.id)
-        if (!el) return
-
-        const offsetTop = el.offsetTop - 120
-        const offsetBottom = offsetTop + el.offsetHeight
-
-        if (scrollY >= offsetTop && scrollY < offsetBottom) {
-          setActive(link.id)
-        }
+    const updateActiveSection = () => {
+      const marker = window.scrollY + 160
+      const current = [...links].reverse().find(({ id }) => {
+        const section = document.getElementById(id)
+        return section && section.offsetTop <= marker
       })
+      const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4
+      setActive(atBottom ? "contact" : current?.id ?? "home")
     }
-
-    window.addEventListener("scroll", handler)
-    handler()
-
-    return () => window.removeEventListener("scroll", handler)
+    window.addEventListener("scroll", updateActiveSection, { passive: true })
+    window.addEventListener("resize", updateActiveSection)
+    updateActiveSection()
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection)
+      window.removeEventListener("resize", updateActiveSection)
+    }
   }, [])
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    })
-  }
-
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
-      <div className="backdrop-blur-md bg-zinc-950/70 border-b border-zinc-900">
-        <div className="max-w-5xl mx-auto px-6 md:px-10 h-14 flex items-center justify-between">
-
-          <div className="text-sm tracking-widest text-blue-400">
-            jethro estangki
-          </div>
-
-          <nav className="hidden md:flex gap-8 text-sm">
-            {links.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollTo(link.id)}
-                className={`transition ${
-                  active === link.id
-                    ? "text-white"
-                    : "text-zinc-500 hover:text-zinc-300"
-                }`}
-              >
-                {link.label}
-              </button>
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-zinc-800/80 bg-zinc-950/95 backdrop-blur-md">
+      <div className="max-w-5xl mx-auto px-6 md:px-10">
+        <div className="h-14 md:h-16 flex items-center justify-between gap-4">
+          <a href="#home" aria-label="Jethro Estangki / dev, home" className="text-sm font-medium tracking-wide text-blue-300 min-h-11 inline-flex items-center">jethro estangki<span className="text-zinc-400"> / dev</span></a>
+          <nav aria-label="Main navigation" className="hidden md:flex gap-5 text-sm">
+            {links.map(({ id, label }) => (
+              <a key={id} href={`#${id}`} aria-current={active === id ? "location" : undefined} className={`nav-link ${active === id ? "text-blue-300" : "text-zinc-400"}`}>{label}</a>
             ))}
           </nav>
+          <a href="#contact" className="md:hidden text-sm text-blue-300 min-h-11 inline-flex items-center">Contact</a>
         </div>
+        <nav aria-label="Mobile navigation" className="md:hidden grid grid-cols-4 border-t border-zinc-800 text-xs">
+          {links.filter(({ id }) => id !== "contact").map(({ id, label }) => (
+            <a key={id} href={`#${id}`} aria-current={active === id ? "location" : undefined} className={`nav-link justify-center ${active === id ? "text-blue-300" : "text-zinc-400"}`}>{label === "About & skills" ? "Skills" : label}</a>
+          ))}
+        </nav>
       </div>
     </header>
   )

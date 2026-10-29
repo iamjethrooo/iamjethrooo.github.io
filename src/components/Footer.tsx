@@ -1,16 +1,14 @@
+import { profile } from "../data/profile"
+
 export default function Footer() {
-    return (
-        <div className="w-full" >
-            <div className="flex justify-between items-center text-xs text-zinc-500">
-                <span>© 2026 jethro estangki</span>
-
-                <div className="flex gap-4">
-                    <a href='https://github.com/iamjethrooo' target="_blank">GitHub</a>
-                    <a href='mailto:estangkij@gmail.com'>Email</a>
-                    <a href='https://www.linkedin.com/in/jethro-estangki/' target="_blank">LinkedIn</a>
-                </div>
-            </div>
-
-        </div >
-    )
+  return (
+    <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 text-xs text-zinc-400">
+      <span>© {new Date().getFullYear()} Jethro Estangki</span>
+      <div className="flex flex-wrap gap-5">
+        <a className="inline-flex items-center min-h-11 hover:text-blue-300" href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a className="inline-flex items-center min-h-11 hover:text-blue-300" href={`mailto:${profile.email}`}>Email</a>
+        <a className="inline-flex items-center min-h-11 hover:text-blue-300" href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  )
 }

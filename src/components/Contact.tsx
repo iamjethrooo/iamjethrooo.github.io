@@ -1,62 +1,37 @@
+import { ArrowUpRight, FileText, Download, Code2, ArrowRight, Mail } from "lucide-react"
+import { profile } from "../data/profile"
+
 export default function Contact() {
-    return (
-        <section id="contact" className="h-screen flex flex-col justify-center items-start space-y-8">
-
-            <h2 className="text-xs uppercase tracking-widest text-zinc-500">
-                Contact
-            </h2>
-
-            <p className="text-zinc-400 max-w-2xl leading-relaxed">
-                Open to freelance work or full-time opportunities.
-                If you’re building something interesting, feel free to reach out.
-            </p>
-
-            <div className="flex flex-col gap-6">
-
-                {/* Email */}
-                <a
-                    href="mailto:estangkij@gmail.com"
-                    className="flex items-center gap-10 justify-between px-8 py-3 rounded-md border border-zinc-800 hover:border-blue-400 transition group"
-                >
-                    <span className="text-zinc-300 group-hover:text-blue-400">
-                        Email
-                    </span>
-                    <span className="text-zinc-500 text-sm">
-                        let's talk →
-                    </span>
-                </a>
-
-                {/* GitHub */}
-                <a
-                    href="https://github.com/iamjethrooo"
-                    target="_blank"
-                    className="flex items-center gap-10 justify-between px-8 py-3 rounded-md border border-zinc-800 hover:border-zinc-600 transition group"
-                >
-                    <span className="text-zinc-300 group-hover:text-white">
-                        GitHub
-                    </span>
-                    <span className="text-zinc-500 text-sm">
-                        code →
-                    </span>
-                </a>
-
-                {/* LinkedIn */}
-                <a
-                    href="https://www.linkedin.com/in/jethro-estangki/"
-                    target="_blank"
-                    className="flex items-center gap-10 justify-between px-8 py-3 rounded-md border border-zinc-800 hover:border-zinc-600 transition group"
-                >
-                    <span className="text-zinc-300 group-hover:text-white">
-                        LinkedIn
-                    </span>
-                    <span className="text-zinc-500 text-sm">
-                        profile →
-                    </span>
-                </a>
-
-            </div>
-
-        </section>
-
-    )
+  return (
+    <section id="contact" aria-labelledby="contact-title" className="section-shell">
+      <p className="eyebrow">04 / Contact</p>
+      <h2 id="contact-title" className="section-title">Contact</h2>
+      <p className="section-intro">
+        I’m looking for C#/.NET, backend, or full-stack roles, preferably remote.
+      </p>
+      <a
+        href={`mailto:${profile.email}`}
+        className="mt-7 inline-flex items-center gap-3 text-lg sm:text-2xl font-medium text-blue-300 hover:text-blue-200 min-h-11 break-all"
+      >
+        <Mail size={22} className="shrink-0" aria-hidden="true" />
+        {profile.email}
+        <ArrowUpRight size={20} className="shrink-0" aria-hidden="true" />
+      </a>
+      <div className="mt-6 flex flex-wrap gap-3">
+        <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="button-primary">
+          <FileText size={16} aria-hidden="true" />View résumé
+          <ArrowUpRight size={14} aria-hidden="true" />
+        </a>
+        <a href={profile.resumePdf} className="button-secondary">
+          <Download size={16} aria-hidden="true" />Download résumé (PDF)
+        </a>
+        <a href={profile.github} target="_blank" rel="noopener noreferrer" className="button-secondary">
+          <Code2 size={17} aria-hidden="true" />GitHub
+        </a>
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="button-secondary">
+          <ArrowRight size={17} aria-hidden="true" />LinkedIn
+        </a>
+      </div>
+    </section>
+  )
 }

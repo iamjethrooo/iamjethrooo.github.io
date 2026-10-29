@@ -1,59 +1,59 @@
 type TimelineItem = {
-  type: "ship" | "build"
+  type: "professional" | "leadership" | "education"
   title: string
   company: string
   date: string
-  description: string
-  stack: string[],
+  description?: string
+  highlights?: string[]
   award?: string
 }
 
 export const timeline: TimelineItem[] = [
   {
-    type: "ship",
+    type: "professional",
     title: "Business Applications Developer",
     company: "Forecasting and Planning Technologies, Inc.",
-    date: "2023 - Present",
+    date: "June 2023 – June 2026",
     description:
-      "Built and maintained features for enterprise planning systems used in business-critical workflows. Focused on performance, reliability, and delivering fixes in production environments under tight deadlines.",
-    stack: ["C#", "ASP.NET", "MSSQL", "HTML/CSS", "JavaScript"],
+      "Developed and maintained C# and ASP.NET Web Forms business applications for multiple clients.",
+    highlights: [
+      "Implemented business logic and features for complex client requirements.",
+      "Investigated and resolved production issues in existing client systems.",
+      "Wrote and optimized T-SQL queries and stored procedures in SQL Server.",
+    ],
   },
   {
-    type: "ship",
+    type: "leadership",
     title: "IT Adviser",
     company: "Saint Louis University Commission on Elections",
-    date: "2024 - 2025",
+    date: "2024–2025",
     description:
-       "Provided technical direction and executed a full system rewrite after identifying performance bottlenecks in database and system-level operations, significantly improving speed and reliability for future election cycles.",
-    stack: ["PHP", "MySQL", "HTML/CSS", "JavaScript", "Apache Server", "Linux"],
+      "Provided technical direction and rebuilt the election application from scratch after identifying database and system performance bottlenecks.",
   },
   {
-    type: "ship",
+    type: "leadership",
     title: "IT Head",
     company: "Saint Louis University Commission on Elections",
-    date: "2023 - 2024",
+    date: "2023–2024",
     description:
-      "Led IT operations for school-wide elections, overseeing system deployment, technical coordination, and execution of digital election workflows under strict deadlines and high reliability requirements.",
-    stack: ["PHP", "MySQL", "HTML/CSS", "JavaScript", "Apache Server", "Linux"],
+      "Led IT operations for university elections, overseeing system deployment, coordinating technical work, and supporting digital election workflows.",
   },
   {
-    type: "build",
+    type: "education",
     title: "Bachelor of Science in Computer Science",
     company: "Saint Louis University",
-    date: "2020-2024",
+    date: "2020–2024",
     description:
-      "Built multiple systems and software projects focused on core engineering fundamentals including data structures, databases, and full-stack development through project-based coursework.",
-    stack: ["Java", "Python", "HTML/CSS", "SQL", "Git", "PHP"],
+      "Coursework included data structures, databases, and full-stack development.",
     award: "Magna Cum Laude"
   },
   {
-    type: "build",
+    type: "education",
     title: "Information and Communications Technology",
     company: "University of the Cordilleras",
-    date: "2018-2020",
+    date: "2018–2020",
     description:
-      "Learned programming fundamentals and early software development concepts through hands-on coursework in logic, web development, and basic systems design.",
-    stack: ["Java", "HTML/CSS", "SQL", "Git"],
+      "Coursework covered programming fundamentals, logic, and web development.",
     award: "With Honors"
   }
 ]
