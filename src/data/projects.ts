@@ -1,6 +1,7 @@
 export type ProjectImage = {
   src: string
   alt: string
+  caption?: string
   width: number
   height: number
   thumbnail?: string
@@ -42,12 +43,14 @@ export const projects: Project[] = [
       {
         "src": "/projects/election-1.webp",
         "alt": "SLU election ballot with candidate and voter details redacted",
+        "caption": "Sensitive information redacted for privacy",
         "width": 1600,
         "height": 784
       },
       {
         "src": "/projects/election-2.webp",
         "alt": "SLU election dashboard with aggregate voter turnout and activity records permanently redacted",
+        "caption": "Sensitive information redacted for privacy",
         "width": 1600,
         "height": 791,
         "thumbnail": "/projects/election-2-thumb.webp"
@@ -59,8 +62,7 @@ export const projects: Project[] = [
         "height": 796
       }
     ],
-    "featured": true,
-    "availability": "No public source/demo"
+    "featured": true
   },
   {
     "slug": "earnings-tracker",

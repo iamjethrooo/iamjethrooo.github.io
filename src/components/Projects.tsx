@@ -5,6 +5,8 @@ import type { Project } from "../data/projects"
 import TechStack from "./TechStack"
 
 function ProjectLinks({ project }: { project: Project }) {
+  if (!project.link && !project.demo) return null
+
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
       {project.link && (
@@ -28,11 +30,6 @@ function ProjectLinks({ project }: { project: Project }) {
         >
           Live demo <ArrowUpRight size={15} aria-hidden="true" />
         </a>
-      )}
-      {!project.link && !project.demo && (
-        <span className="text-xs text-zinc-400">
-          {project.availability ?? "Source not publicly linked"}
-        </span>
       )}
     </div>
   )
@@ -89,15 +86,16 @@ function ProjectDialog({ project, trigger, onClose }: { project: Project; trigge
           {project.title}
         </h2>
         <p className="mt-4 text-zinc-300 leading-relaxed">{project.description}</p>
-        <h3 className="mt-6 text-sm font-medium text-blue-300">Implementation</h3>
-        <p className="mt-2 text-sm text-zinc-400 leading-relaxed">{project.focus}</p>
+        <p className="mt-6 text-sm text-zinc-400 leading-relaxed">{project.focus}</p>
         <div className="mt-5"><TechStack technologies={project.stack} /></div>
         {project.details && (
           <ul className="list-disc pl-5 mt-6 space-y-3 text-sm leading-relaxed text-zinc-300 marker:text-blue-400">
             {project.details.map((detail) => <li key={detail}>{detail}</li>)}
           </ul>
         )}
-        <div className="mt-3"><ProjectLinks project={project} /></div>
+        {(project.link || project.demo) && (
+          <div className="mt-3"><ProjectLinks project={project} /></div>
+        )}
         {image && (
           <figure className="mt-6">
             <img
@@ -109,7 +107,7 @@ function ProjectDialog({ project, trigger, onClose }: { project: Project; trigge
               decoding="async"
             />
             <figcaption className="mt-2 text-xs text-zinc-400">
-              {image.alt}
+              {image.caption ?? image.alt}
               {project.images.length > 1 ? ` · ${imageIndex + 1} of ${project.images.length}` : ""}
             </figcaption>
           </figure>
@@ -150,7 +148,7 @@ export default function Projects() {
               aria-labelledby={`${project.slug}-title`}
               className={`flex flex-col rounded-xl border overflow-hidden ${project.featured ? "border-blue-300/30 bg-zinc-900/40" : "border-zinc-800"}`}
             >
-              {!project.featured && project.images[0] && (
+              {project.images[0] && (
                 <button
                   type="button"
                   onClick={(event) => setSelectedProject({ project, trigger: event.currentTarget })}
